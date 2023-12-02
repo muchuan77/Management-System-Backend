@@ -8,19 +8,17 @@ import com.example.util.Identifiable;
 import lombok.Data;
 
 @Data
-@TableName("employee")
-public class Employee implements Identifiable {
+@TableName("waybill")
+public class Waybill implements Identifiable {
     @TableId(type = IdType.INPUT)
     private Integer id;
-    @TableField("employeeName")
-    private String employeeName;
-    @TableField("age")
-    private Integer age;
-    @TableField("gender")
-    private String gender;
-    @TableField("address")
-    private String address;
-    @TableField("manHour")
-    private Integer manHour;
+    @TableField("waybillName")
+    private String waybillName;
+    @TableField("waybillTime")
+    private String waybillTime;
+    @TableField("consigneeName")
+    private String consigneeName;
+    @TableField("waybillDescription")
+    private String waybillDescription;
 
 }
