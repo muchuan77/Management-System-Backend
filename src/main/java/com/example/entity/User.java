@@ -10,10 +10,12 @@ import lombok.Data;
 @Data
 @TableName("user")
 public class User implements Identifiable {
-    @TableId(type = IdType.INPUT)
+    @TableId(type = IdType.AUTO)
     private Integer id;
     @TableField("username")
     private String username;
     @TableField("password")
     private String password;
+    @TableField("mailbox")
+    private String mailbox;
 }

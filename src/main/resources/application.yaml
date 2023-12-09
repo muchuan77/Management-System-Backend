@@ -5,9 +5,11 @@ spring:
     password: 123456
     driver-class-name: com.mysql.cj.jdbc.Driver
   security:
-    user:
-      name: cat
-      password: 123456
+    basic:
+      enabled: false
+  autoconfigure:
+    exclude:
+      - org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration
 server:
   port: 8081
 

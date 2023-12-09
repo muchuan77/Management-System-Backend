@@ -8,7 +8,6 @@ import com.example.mapper.UserMapper;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-
 import static org.hibernate.validator.internal.util.Contracts.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -29,7 +28,7 @@ class BackendApplicationTests {
         int addUserResult = userMapper.insert(user);
         assertEquals(1, addUserResult);
 
-        // Get User by Id
+        // Get User by id
         User getUser = userMapper.selectById(user.getId());
         assertNotNull(getUser);
         assertEquals("testUser", getUser.getUsername());
@@ -57,7 +56,7 @@ class BackendApplicationTests {
         int addEmployeeResult = employeeMapper.insert(employee);
         assertEquals(1, addEmployeeResult);
 
-        // Get Employee by Id
+        // Get Employee by id
         Employee getEmployee = employeeMapper.selectById(employee.getId());
         assertNotNull(getEmployee);
         assertEquals("testEmployee", getEmployee.getEmployeeName());

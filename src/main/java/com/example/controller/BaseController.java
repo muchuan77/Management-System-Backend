@@ -13,6 +13,7 @@ import java.util.Map;
 
 @Slf4j
 @Validated
+@RestController
 public abstract class BaseController<T extends Identifiable, Mapper extends BaseMapper<T>>{
     protected abstract Mapper getMapper();
 
@@ -23,6 +24,7 @@ public abstract class BaseController<T extends Identifiable, Mapper extends Base
 
     @PostMapping("/add")
     public String addEntity(@RequestBody T entity) {
+        entity.setId(null);
         int result = getMapper().insert(entity);
         return result > 0 ? entity.getClass().getSimpleName() + " added successfully" : "Failed to add " + entity.getClass().getSimpleName();
     }
@@ -39,6 +41,25 @@ public abstract class BaseController<T extends Identifiable, Mapper extends Base
         int result = getMapper().deleteById(id);
         return result > 0 ? "Entity deleted successfully" : "Failed to delete entity";
     }
+
+    @DeleteMapping("/deleteRange/{startId}/{endId}")
+    public String deleteRange(@PathVariable Integer startId, @PathVariable Integer endId) {
+        log.info("Deleting range: {} to {}", startId, endId);
+
+        QueryWrapper<T> queryWrapper = new QueryWrapper<>();
+        queryWrapper.between("id", startId, endId);
+
+        try {
+            int result = getMapper().delete(queryWrapper);
+            log.info("Deletion result: {}", result);
+
+            return result > 0 ? "Deletion Range Successful" : "Deletion Range Failed";
+        } catch (Exception e) {
+            log.error("Error deleting range", e);
+            return "Deletion Range Failed";
+        }
+    }
+
 
     @GetMapping("/list")
     public List<T> getAllEntities() {

@@ -10,7 +10,7 @@ import lombok.Data;
 @Data
 @TableName("employee")
 public class Employee implements Identifiable {
-    @TableId(type = IdType.INPUT)
+    @TableId(type = IdType.AUTO)
     private Integer id;
     @TableField("employeeName")
     private String employeeName;
