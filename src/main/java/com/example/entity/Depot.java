@@ -14,6 +14,8 @@ public class Depot implements Identifiable {
     private Integer id;
     @TableField("cargoName")
     private String cargoName;
+    @TableField("typeName")
+    private String typeName;
     @TableField("weight")
     private String weight;
     @TableField("outboundTime")
