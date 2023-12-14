@@ -12,13 +12,3 @@ spring:
       - org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration
 server:
   port: 8081
-
-logging:
-  level:
-    org:
-      springframework:
-        security=DEBUG:
-
-mybatis-plus:
-  configuration:
-    map-underscore-to-camel-case: true

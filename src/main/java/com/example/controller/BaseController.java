@@ -66,7 +66,7 @@ public abstract class BaseController<T extends Identifiable, Mapper extends Base
         return getMapper().selectList(null);
     }
 
-    @GetMapping("/search")
+    @PostMapping("/search")
     public List<T> searchEntities(@RequestParam Map<String, Object> params) {
         QueryWrapper<T> queryWrapper = new QueryWrapper<>();
         // 根据前端传递的参数构建查询条件

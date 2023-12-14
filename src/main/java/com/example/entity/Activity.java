@@ -22,4 +22,6 @@ public class Activity implements Identifiable {
     private String activityForm;
     @TableField("activityZone")
     private String activityZone;
+    @TableField("activityResource")
+    private String activityResource;
 }

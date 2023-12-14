@@ -6,16 +6,14 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 
 @Configuration
-public class WebConfiguration implements WebMvcConfigurer {
+public class CrosConfig implements WebMvcConfigurer {
     @Override
     public void addCorsMappings(CorsRegistry registry) {
         registry.addMapping("/**")
                 .allowCredentials(true)
-                .allowedOriginPatterns("*")
-//                .allowedOrigins("http://localhost:8080")
-                .allowedMethods("GET", "POST", "PUT", "DELETE")
+                .allowedOriginPatterns("http://localhost:5173")
+                .allowedMethods("*")
                 .allowedHeaders("*")
-                .exposedHeaders("*")
                 .maxAge(3600);
     }
 }
