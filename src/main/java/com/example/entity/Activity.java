@@ -24,4 +24,6 @@ public class Activity implements Identifiable {
     private String activityZone;
     @TableField("activityResource")
     private String activityResource;
+    @TableField("status")
+    private String status;
 }

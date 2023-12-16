@@ -1,0 +1,4 @@
+INSERT INTO `activity` (`id`, `activityName`, `activityTime`, `activityType`, `activityForm`, `activityZone`, `activityResource`, `status`) VALUES (1, '货物申请A', '2023-01-01 14:30:00', '电子产品', '采购', '仓库1', '公司', 'processed');
+INSERT INTO `activity` (`id`, `activityName`, `activityTime`, `activityType`, `activityForm`, `activityZone`, `activityResource`, `status`) VALUES (2, '货物申请B', '2023-02-20 10:45:00', '食品', '调配', '仓库2', '公司', 'pending');
+INSERT INTO `activity` (`id`, `activityName`, `activityTime`, `activityType`, `activityForm`, `activityZone`, `activityResource`, `status`) VALUES (3, '货物申请C', '2023-03-15 09:00:00', '服装', '出售', '仓库3', '公司', 'warning');
+INSERT INTO `activity` (`id`, `activityName`, `activityTime`, `activityType`, `activityForm`, `activityZone`, `activityResource`, `status`) VALUES (4, '货物申请D', '2023-04-10 18:00:00', '家具', '转移', '仓库4', '公司', 'warning');

@@ -30,5 +30,8 @@ public class User implements Identifiable{
 
     @TableField("mailbox")
     private String mailbox;
+
+    @TableField("usertype")
+    private String usertype;
 }
 
