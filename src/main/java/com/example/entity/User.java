@@ -33,5 +33,11 @@ public class User implements Identifiable{
 
     @TableField("usertype")
     private String usertype;
+
+    @TableField("workplace")
+    private String workplace;
+
+    @TableField("contact")
+    private String contact;
 }
 
